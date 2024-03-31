@@ -1,0 +1,91 @@
+<!--cascading style sheets css-->
+<!--to change the appearance of HTML elements-->
+<style>
+  .subscribe-button {
+    background-color: rgb(140, 0, 0); 
+    color: white;
+    border: none;
+    height: 50px;
+    width: 150px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 30px;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: opacity 0.15s;
+    vertical-align: top;
+  }
+
+  .subscribe-button:hover {
+    opacity: 0.8;
+  }
+
+  .subscribe-button:active {
+    opacity: 0.5;
+  }
+
+  .join-button {
+    background-color: white;
+    border-color: green;
+    border-style: solid;
+    border-width: 1px;
+    color: green;
+    height: 30px;
+    width: 100px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 10px;
+    padding-left: 30px;
+    padding-top: 20px;
+    transition: background-color 1s,
+    color 1s;
+    vertical-align: top;
+
+  }
+
+  .join-button:hover {
+    background-color: green;
+    color: white;
+  }
+
+  .join-button:active {
+    opacity: 0.7;
+  }
+
+  .tweet-button {
+    background-color: rgb(0, 153, 229);
+    border-color: rgb(0, 153, 229);
+    border: none;
+    color: white;
+    height: 30px;
+    width: 100px;
+    border-radius: 18px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+    vertical-align: top;
+
+    }
+
+    .tweet-button:hover {
+      box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+    }
+</style>
+<!--css property and css value e.g. width: ;-->
+<!--pseudo class e.g. hover and active related to appearance change when we click or point to the button-->
+<!--transition is the change within a period of time-->
+<button class="subscribe-button">
+  SUBSCRIBE
+</button>
+<!--class= is useful to target the design of only one thing-->
+<!--padding spacing between its content of the button and its border-->
+<button class="join-button">
+  JOIN
+</button>
+
+<button class="tweet-button">
+  Tweet
+</button>
