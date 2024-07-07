@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"> 
+  <meta charset="UTF-8">
   <title>Wong King Long, Ken - UG Mathematics Homepage</title>
   <style>
     body {
@@ -119,6 +119,29 @@
     .active {
       display: block;
     }
+
+    .banner {
+      position: fixed;
+      width: 100%;
+      background-color: #FFA500;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 1em 0;
+      font-size: 1.2em;
+      animation: moveBanner 10s linear infinite;
+    }
+
+    @keyframes moveBanner {
+      0% {
+        top: 0;
+      }
+      50% {
+        top: 50%;
+      }
+      100% {
+        top: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -126,9 +149,9 @@
     <h1>Wong King Long, Ken</h1>
   </header>
   <nav>
-    <a href="#home" onclick="showSection('home')">Home</a>
-    <a href="#about" onclick="showSection('about')">About</a>
-    <a href="#contact" onclick="showSection('contact')">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html" target="_blank">About</a>
+    <a href="contact.html" target="_blank">Contact</a>
   </nav>
   <main>
     <section id="home" class="active">
@@ -152,41 +175,11 @@
       <a class="cta" id="contactButton">Contact Me Now!</a>
       <p>Button Clicks: <span id="clickCount">0</span></p>
     </section>
-    <section id="about" class="hidden">
-      <p>
-        <span class="highlight">Fun Fact About Me:</span> I am currently learning 
-        <span class="important">Python</span>, 
-        <span class="important">Excel</span>, and 
-        <span class="important">Web Design</span>. 
-        In my free time, I enjoy playing the 
-        <span class="important">violin</span> and 
-        <span class="important">badminton</span>. 
-        I am also a student intern in the 
-        <span class="highlight">FWD (Actuarial Department, Modeling Team)</span> 
-        from June 2024 to January 2025.
-        My favorite singers are 
-        <span class="important">Khalil Fong</span>, 
-        <span class="important">Jay Chou</span>, and 
-        <span class="important">Fujii Kaze</span>. 
-        Additionally, I am an avid 
-        <span class="highlight">laptop dark mode user</span>.
-      </p>
-    </section>
-    <section id="contact" class="hidden">
-      <p>
-        Personal Email: kenwong69973243@gmail.com
-        <br>
-        School Email: klwongbk@connect.ust.hk
-      </p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/ken-wong-3b10b0267/?trk=public-profile-join-page">LinkedIn</a>
-        <a href="mailto:kenwong69973243@gmail.com">Email</a>
-      </div>
-    </section>
   </main>
   <footer id="footer" class="semi-transparent">
     <p>&copy; 2024 Wong King Long, Ken</p>
   </footer>
+  <div class="banner">Welcome to my homepage! Keep exploring to know more about me.</div>
   <script>
     // Function to update the date and time
     function updateDateTime() {
@@ -213,7 +206,7 @@
       footer.classList.add("semi-transparent");
     });
 
-    // Function to show the correct section
+    // Function to show the correct section (not needed anymore since sections open in new tabs)
     function showSection(sectionId) {
       var sections = document.querySelectorAll('main section');
       sections.forEach(function(section) {
@@ -224,9 +217,12 @@
     }
 
     // Click counter for the Contact Me Now! button
-    var clickCount = 0;
+    var clickCount = localStorage.getItem('clickCount') || 0;
+    document.getElementById("clickCount").textContent = clickCount;
+
     document.getElementById("contactButton").addEventListener("click", function() {
       clickCount++;
+      localStorage.setItem('clickCount', clickCount);
       document.getElementById("clickCount").textContent = clickCount;
     });
   </script>
