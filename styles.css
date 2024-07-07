@@ -95,10 +95,6 @@ img {
   color: #FF4500;
 }
 
-.hidden {
-  display: none;
-}
-
 .active {
   display: block;
 }
