@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"> 
   <title>Wong King Long, Ken - UG Mathematics Homepage</title>
   <style>
     body {
-      background-color: #FFFAF0; /* Light orange background color */
+      background-color: #3e3456; /* blue background color */
       color: #333333; /* Dark grey text color */
       font-family: Arial, sans-serif;
       line-height: 1.6;
@@ -56,6 +56,11 @@
       position: fixed;
       width: 100%;
       bottom: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    footer.semi-transparent {
+      opacity: 0.5;
     }
 
     .datetime {
@@ -94,11 +99,10 @@
       color: #FF4500; /* Red-orange */
     }
   </style>
-  <link rel="icon" type="image/png" href="spade.png">
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Seishun Logo">
+    <img src="mathskee.png" alt="Seishun Logo">
     <h1>Wong King Long, Ken</h1>
   </header>
   <nav>
@@ -131,7 +135,7 @@
     <img src="mybee.jpeg" alt="Ken Wong">
     <a href="#" class="cta">Contact Me Now!</a>
   </main>
-  <footer>
+  <footer id="footer" class="semi-transparent">
     <div class="social-links">
       <a href="https://www.linkedin.com/in/ken-wong-3b10b0267/?trk=public-profile-join-page">LinkedIn</a>
       <a href="mailto:kenwong69973243@gmail.com">Email</a>
@@ -151,6 +155,18 @@
 
     // Update the date and time every second (1000 milliseconds)
     setInterval(updateDateTime, 1000);
+
+    // Make footer semi-transparent on load
+    var footer = document.getElementById("footer");
+
+    // Add event listeners to change opacity on mouse events
+    footer.addEventListener("mouseover", function() {
+      footer.classList.remove("semi-transparent");
+    });
+
+    footer.addEventListener("mouseout", function() {
+      footer.classList.add("semi-transparent");
+    });
   </script>
 </body>
 </html>
