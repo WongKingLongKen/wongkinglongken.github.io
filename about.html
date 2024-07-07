@@ -2,148 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Wong King Long, Ken - UG Mathematics Homepage</title>
-  <style>
-    body {
-      background-color: #FFFAF0; /* light orange background color */
-      color: #333333;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #FFA500;
-      color: #FFFFFF;
-      padding: 1em;
-      text-align: center;
-    }
-
-    header img {
-      height: 50px;
-      vertical-align: middle;
-    }
-
-    header h1 {
-      display: inline;
-      margin-left: 10px;
-      font-style: italic;
-    }
-
-    nav {
-      background-color: #FF8C00;
-      padding: 1em;
-      text-align: center;
-    }
-
-    nav a {
-      color: #FFFFFF;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    main {
-      padding: 2em;
-    }
-
-    footer {
-      background-color: #FFA500;
-      color: #FFFFFF;
-      padding: 1em;
-      text-align: center;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-      transition: opacity 0.5s ease;
-    }
-
-    footer.semi-transparent {
-      opacity: 0.5;
-    }
-
-    .datetime {
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    p {
-      margin-bottom: 1.5em;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .cta {
-      background-color: #FF4500;
-      color: #FFFFFF;
-      padding: 1em;
-      text-align: center;
-      margin-top: 2em;
-      display: block;
-      text-decoration: none;
-      font-size: 1.2em;
-      cursor: pointer;
-    }
-
-    .cta:hover {
-      background-color: #FF6347;
-    }
-
-    .social-links a {
-      margin: 0 10px;
-      color: #FF4500;
-    }
-
-    .highlight {
-      background-color: #FFD700;
-      padding: 0.2em 0.5em;
-      border-radius: 5px;
-    }
-
-    .important {
-      font-weight: bold;
-      color: #FF4500;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .active {
-      display: block;
-    }
-
-    .banner {
-  position: fixed;
-  width: 100%;
-  background-color: rgba(0, 0, 139, 0.5); /* Dark blue semi-transparent background color */
-  color: #FFFFFF;
-  text-align: center;
-  padding: 1em 0;
-  font-size: 1.2em;
-  animation: moveBanner 10s linear infinite;
-  top: 0; /* Start the banner at the top */
-}
-
-  @keyframes moveBanner {
-    0% {
-      left: -100%; /* Move the banner off-screen to the left */
-    }
-    50% {
-      left: 50%; /* Move the banner to the center */
-    }
-    100% {
-      left: 100%; /* Move the banner off-screen to the right */
-    }
-  }
-  </style>
+  <title>About Ken Wong</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -151,81 +11,33 @@
   </header>
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html" target="_blank">About</a>
-    <a href="contact.html" target="_blank">Contact</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
   </nav>
   <main>
-    <section id="home" class="active">
-      <p class="datetime" id="datetime"></p>
+    <section id="about" class="hidden">
       <p>
-        Welcome to my home page! I am a Financial and Actuarial
-        <a href="https://www.math.hkust.edu.hk/">Mathematics</a>
-        plus AI student surviving at
-        <a href="https://hkust.edu.hk/">HKUST</a>.
-        I'm right now a student intern working at an insurance company that provides me with a position in modeling.
+        <span class="highlight">Fun Fact About Me:</span> I am currently learning 
+        <span class="important">Python</span>, 
+        <span class="important">Excel</span>, and 
+        <span class="important">Web Design</span>. 
+        In my free time, I enjoy playing the 
+        <span class="important">violin</span> and 
+        <span class="important">badminton</span>. 
+        I am also a student intern in the 
+        <span class="highlight">FWD (Actuarial Department, Modeling Team)</span> 
+        from June 2024 to January 2025.
+        My favorite singers are 
+        <span class="important">Khalil Fong</span>, 
+        <span class="important">Jay Chou</span>, and 
+        <span class="important">Fujii Kaze</span>. 
+        Additionally, I am an avid 
+        <span class="highlight">laptop dark mode user</span>.
       </p>
-      <p>
-        [
-        <a href="https://www.linkedin.com/in/ken-wong-3b10b0267/?trk=public-profile-join-page">
-        LinkedIn</a>
-        ] [
-        <a href="NEW_King long wong.pdf">CV</a>
-        ]
-      </p>
-      <img src="mathskee.png" alt="Ken Wong">
-      <a class="cta" id="contactButton">Contact Me Now!</a>
-      <p>Button Clicks: <span id="clickCount">0</span></p>
     </section>
   </main>
-  <footer id="footer" class="semi-transparent">
+  <footer>
     <p>&copy; 2024 Wong King Long, Ken</p>
   </footer>
-  <div class="banner">Welcome to my homepage! Keep exploring to know more about me.</div>
-  <script>
-    // Function to update the date and time
-    function updateDateTime() {
-      var now = new Date();
-      var datetime = now.toLocaleString();
-      document.getElementById("datetime").innerHTML = datetime;
-    }
-
-    // Update the date and time immediately
-    updateDateTime();
-
-    // Update the date and time every second (1000 milliseconds)
-    setInterval(updateDateTime, 1000);
-
-    // Make footer semi-transparent on load
-    var footer = document.getElementById("footer");
-
-    // Add event listeners to change opacity on mouse events
-    footer.addEventListener("mouseover", function() {
-      footer.classList.remove("semi-transparent");
-    });
-
-    footer.addEventListener("mouseout", function() {
-      footer.classList.add("semi-transparent");
-    });
-
-    // Function to show the correct section (not needed anymore since sections open in new tabs)
-    function showSection(sectionId) {
-      var sections = document.querySelectorAll('main section');
-      sections.forEach(function(section) {
-        section.classList.add('hidden');
-      });
-      document.getElementById(sectionId).classList.remove('hidden');
-      document.getElementById(sectionId).classList.add('active');
-    }
-
-    // Click counter for the Contact Me Now! button
-    var clickCount = localStorage.getItem('clickCount') || 0;
-    document.getElementById("clickCount").textContent = clickCount;
-
-    document.getElementById("contactButton").addEventListener("click", function() {
-      clickCount++;
-      localStorage.setItem('clickCount', clickCount);
-      document.getElementById("clickCount").textContent = clickCount;
-    });
-  </script>
 </body>
 </html>
