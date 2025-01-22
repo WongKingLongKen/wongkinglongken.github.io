@@ -1,0 +1,131 @@
+body {
+    font-family: 'Lobster', cursive;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #E6ADBC, #E6D8AD);
+    color: #333;
+}
+
+header {
+    background-color: #ADD8E6;
+    color: #333;
+    padding: 1em;
+    text-align: center;
+}
+
+nav {
+    background-color: #ADD8E6;
+    padding: 1em;
+    text-align: center;
+}
+
+nav a {
+    color: #333;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main {
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #ADD8E6;
+    color: #333;
+    padding: 1em;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.round-icon {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.round-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.5), rgba(255,255,255,0));
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.project {
+    margin: 20px 0;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.project img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.project p {
+    margin: 10px 0;
+    flex: 1;
+}
+
+.project a {
+    color: #5F9EA0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 1em;
+    }
+
+    .round-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .project {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project img {
+        margin: 0 0 10px 0;
+    }
+}
