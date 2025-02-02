@@ -70,9 +70,16 @@ function addTask(task, isCompleted = false) {
       input.type = 'text';
       input.value = taskText.textContent;
       listItem.insertBefore(input, taskText);
+      listItem.removeChild(taskText);
       listItem.classList.add('editing');
       editButton.textContent = 'Save';
       input.focus();
+
+      input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          editButton.click();
+        }
+      });
     }
   });
   
