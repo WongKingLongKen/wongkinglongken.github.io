@@ -17,7 +17,7 @@ todoForm.addEventListener('submit', function(event) {
 });
 
 // Add new task
-function addTask(task) {
+function addTask(task, isCompleted = false) {
   const listItem = document.createElement('li');
   const taskText = document.createElement('span');
   taskText.textContent = task;
@@ -25,6 +25,7 @@ function addTask(task) {
   
   const checkBox = document.createElement('input');
   checkBox.setAttribute('type', 'checkbox');
+  checkBox.checked = isCompleted;
   listItem.appendChild(checkBox);
   
   const deleteButton = document.createElement('button');
@@ -36,6 +37,10 @@ function addTask(task) {
   listItem.appendChild(editButton);
   
   todoList.appendChild(listItem);
+
+  if (isCompleted) {
+    taskText.style.textDecoration = 'line-through';
+  }
   
   checkBox.addEventListener('change', function() {
     if (this.checked) {
@@ -43,10 +48,12 @@ function addTask(task) {
     } else {
       taskText.style.textDecoration = 'none';
     }
+    saveTasksToLocalStorage();
   });
   
   deleteButton.addEventListener('click', function() {
     todoList.removeChild(listItem);
+    saveTasksToLocalStorage();
   });
   
   editButton.addEventListener('click', function() {
@@ -55,6 +62,7 @@ function addTask(task) {
       taskText.textContent = this.previousSibling.value;
       listItem.classList.remove('editing');
       editButton.textContent = 'Edit';
+      saveTasksToLocalStorage();
     } else {
       const input = document.createElement('input');
       input.type = 'text';
@@ -72,7 +80,7 @@ function saveTasksToLocalStorage() {
   const tasks = [];
   document.querySelectorAll('#todo-list li').forEach(task => {
     const taskText = task.querySelector('span').textContent;
-    const isCompleted = task.classList.contains('completed');
+    const isCompleted = task.querySelector('input[type="checkbox"]').checked;
     tasks.push({ text: taskText, completed: isCompleted });
   });
   localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -81,6 +89,6 @@ function saveTasksToLocalStorage() {
 document.addEventListener('DOMContentLoaded', function() {
   const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
   savedTasks.forEach(task => {
-    addTask(task.text);
+    addTask(task.text, task.completed);
   });
 });
