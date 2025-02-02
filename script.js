@@ -76,7 +76,8 @@ function addTask(task, isCompleted = false) {
       input.focus();
 
       input.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
+        // or Enter
+        if (e.key === 'Return') {
           editButton.click();
         }
       });
