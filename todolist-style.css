@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'JetBrains Mono', monospace;
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, #E6ADBC, #E6D8AD);
@@ -26,6 +26,7 @@ body {
     border: 2px solid #ddd;
     border-radius: 4px;
     margin-right: 10px;
+    font-family: 'JetBrains Mono', monospace;
 }
   
 #todo-form button {
@@ -36,6 +37,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: 'JetBrains Mono', monospace;
 }
   
 #todo-form button:hover {
@@ -55,6 +57,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 #todo-list li button {
@@ -66,6 +69,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     margin-left: 10px;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 #todo-list li button:hover {
